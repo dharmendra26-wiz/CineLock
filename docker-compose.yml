@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: cinelock-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: cinelock
+      POSTGRES_USER: cinelock
+      POSTGRES_PASSWORD: cinelock
+    ports:
+      - "5433:5432"
+    volumes:
+      - cinelock_data:/var/lib/postgresql/data
+volumes:
+  cinelock_data:
