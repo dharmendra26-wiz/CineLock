@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie,Long> {
-    boolean existsByTittleIgnoreCase(String title);
+    boolean existsByTitleIgnoreCase(String title);
 
-    Optional<Movie> findByTittleIgnoreCase(String title);
+    Optional<Movie> findByTitleIgnoreCase(String title);
 }
